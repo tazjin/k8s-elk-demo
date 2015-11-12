@@ -20,20 +20,19 @@ spec:
           volumeMounts:
             - name: log-storage
               mountPath: /var/log/nginx
-        - image: tazjin/nginx
+        - image: tazjin/nginx:latest
           name: nginx
           ports:
             - containerPort: 80
           volumeMounts:
-            - name: www-storage
-              mountPath: /usr/share/nginx/html
             - name: log-storage
               mountPath: /var/log/nginx
+            - name: www-storage
+              mountPath: /usr/share/nginx/html
       volumes:
         - name: www-storage
           gitRepo:
             repository: https://github.com/tazjin/k8s-elk-demo.git
-            revision: ec0c1fabacb5d68533af2aa51ee3a42b0f809e94
+            revision: content-v1
         - name: log-storage
-          emptyDir:
-            medium: ''
+          emptyDir: {}

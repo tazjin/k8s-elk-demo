@@ -10,5 +10,4 @@ spec:
     k8s-app: demo-app
   ports:
     - port: 80
-      protocol: TCP
-      targetPort: 80
+      name: http
