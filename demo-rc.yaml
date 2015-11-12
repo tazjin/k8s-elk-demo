@@ -20,7 +20,7 @@ spec:
           volumeMounts:
             - name: log-storage
               mountPath: /var/log/nginx
-        - image: nginx
+        - image: tazjin/nginx
           name: nginx
           ports:
             - containerPort: 80
