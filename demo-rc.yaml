@@ -2,17 +2,18 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: demo-app
+  name: demo-app-v1
   labels:
-    k8s-app: demo-app
+    k8s-app: demo-app-v1
 spec:
-  replicas: 1
+  replicas: 3
   selector:
-    k8s-app: demo-app
+    k8s-app: demo-app-v1
   template:
     metadata:
       labels:
-        k8s-app: demo-app
+        k8s-app: demo-app-v1
+        lb-target: web
     spec:
       containers:
         - image: tazjin/log-courier:latest
