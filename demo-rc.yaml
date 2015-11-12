@@ -28,7 +28,7 @@ spec:
             - name: log-storage
               mountPath: /var/log/nginx
             - name: www-storage
-              mountPath: /usr/share/nginx/html
+              mountPath: /www
       volumes:
         - name: www-storage
           gitRepo:
