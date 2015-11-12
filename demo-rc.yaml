@@ -21,25 +21,19 @@ spec:
             - name: log-storage
               mountPath: /var/log/nginx
         - image: nginx
-          name: nginx-container
+          name: nginx
           ports:
-          - containerPort: 80
+            - containerPort: 80
           volumeMounts:
-            - name: nginx-config
-              mountPath: /etc/nginx/conf.d
             - name: www-storage
-              mountPath: /usr/share/nginx
+              mountPath: /usr/share/nginx/html
             - name: log-storage
               mountPath: /var/log/nginx
       volumes:
         - name: www-storage
-          gcePersistentDisk:
-            pdName: www-storage-v1
-            fsType: ext4
-        - name: nginx-config
-          gcePersistentDisk:
-            pdName: log-storage-v1
-            fsType: ext4
+          gitRepo:
+            repository: https://github.com/tazjin/k8s-elk-demo.git
+            revision: 659e65edb1800d155c75c43c11c97da3f6d6206d
         - name: log-storage
           emptyDir:
             medium: ''
