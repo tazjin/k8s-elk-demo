@@ -33,7 +33,7 @@ spec:
         - name: www-storage
           gitRepo:
             repository: https://github.com/tazjin/k8s-elk-demo.git
-            revision: 659e65edb1800d155c75c43c11c97da3f6d6206d
+            revision: ec0c1fabacb5d68533af2aa51ee3a42b0f809e94
         - name: log-storage
           emptyDir:
             medium: ''
