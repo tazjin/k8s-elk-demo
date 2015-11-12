@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kibana
+  labels:
+    k8s-app: elk
+spec:
+  type: LoadBalancer
+  selector:
+    k8s-app: elk
+  ports:
+    - port: 5601
+      name: kibana
