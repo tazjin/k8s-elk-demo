@@ -35,4 +35,4 @@ spec:
         - name: es-storage
           gcePersistentDisk:
             pdName: es-storage-v1
-            fsType: xfs
+            fsType: ext4
