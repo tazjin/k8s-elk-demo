@@ -34,6 +34,6 @@ spec:
         - name: www-storage
           gitRepo:
             repository: https://github.com/tazjin/k8s-elk-demo.git
-            revision: content-v1
+            revision: static-v1
         - name: log-storage
           emptyDir: {}
