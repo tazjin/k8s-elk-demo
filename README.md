@@ -15,6 +15,7 @@ To launch the ELK stack:
    the public IP becomes available.
 
 To launch the demo application:
+
 1. Launch the demo-app ReplicationController: `kubectl create -f demo-rc.yaml`
 2. Launch the demo-app public Service: `kubectl create -f demo-svc.yaml`
 3. Watch `kubectl get svc` until the service becomes available, then point your
@@ -22,6 +23,7 @@ To launch the demo application:
    above.
 
 To demonstrate rolling-updates:
+
 1. Open the `demo-rc.yaml` file.
 2. Change all instances of `demo-app-v1` to `demo-app-v2`
 3. Change the git-repository revision in volumes from `static-v1` to `static-v2`
