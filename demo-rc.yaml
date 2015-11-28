@@ -16,12 +16,12 @@ spec:
         lb-target: web
     spec:
       containers:
-        - image: tazjin/log-courier:latest
+        - image: eu.gcr.io/composite-watch-759/log-courier:latest
           name: log-courier
           volumeMounts:
             - name: log-storage
               mountPath: /var/log/nginx
-        - image: tazjin/nginx:latest
+        - image: eu.gcr.io/composite-watch-759/nginx:latest
           name: nginx
           ports:
             - containerPort: 80

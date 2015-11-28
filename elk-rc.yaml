@@ -13,18 +13,18 @@ spec:
         k8s-app: elk
     spec:
       containers:
-        - image: tazjin/elasticsearch:latest
+        - image: eu.gcr.io/composite-watch-759/elasticsearch:latest
           name: elasticsearch
           ports:
             - containerPort: 9200
           volumeMounts:
             - name: es-storage
               mountPath: /usr/share/elasticsearch/data
-        - image: tazjin/logstash:latest
+        - image: eu.gcr.io/composite-watch-759/logstash:latest
           name: logstash
           ports:
             - containerPort: 8600
-        - image: kibana
+        - image: eu.gcr.io/composite-watch-759/kibana
           name: kibana
           env:
             - name: ELASTICSEARCH_URL
